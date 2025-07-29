@@ -112,8 +112,9 @@ function analyzeSalesData(data, options) {
       .slice(0, 10)
       .map(([sku, quantity]) => ({
         sku: sku,
-        sales_quantity: quantity,
+        quantity: quantity,
       }))
+      console.log(seller.top_products )
   })
   // @TODO: Подготовка итоговой коллекции с нужными полями
 
