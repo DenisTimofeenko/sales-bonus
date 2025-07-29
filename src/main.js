@@ -120,10 +120,10 @@ function analyzeSalesData(data, options) {
   return sellerStats.map((seller) => ({
     seller_id: seller.id, // Строка, идентификатор продавца
     name: seller.name, // Строка, имя продавца
-    revenue: seller.revenue.toFixed(2), // Число с двумя знаками после точки, выручка продавца
-    profit: seller.profit.toFixed(2), // Число с двумя знаками после точки, прибыль продавца
+    revenue: parseFloat(seller.revenue.toFixed(2)), // Число с двумя знаками после точки, выручка продавца
+    profit: parseFloat(seller.profit.toFixed(2)), // Число с двумя знаками после точки, прибыль продавца
     sales_count: seller.sales_count, // Целое число, количество продаж продавца
     top_products: seller.top_products, // Массив объектов вида: { "sku": "SKU_008","quantity": 10}, топ-10 товаров продавца
-    bonus: seller.bonus.toFixed(2), // Число с двумя знаками после точки, бонус продавца
+    bonus: parseFloat(seller.bonus.toFixed(2)), // Число с двумя знаками после точки, бонус продавца
   }))
 }
