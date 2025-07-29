@@ -97,7 +97,7 @@ function analyzeSalesData(data, options) {
       if (!seller.products_sold[item.sku]) {
         seller.products_sold[item.sku] = 0
       }
-      seller.products_sold[item.sku] += 1
+      seller.products_sold[item.sku] += item.quantity
     })
   })
   // @TODO: Сортировка продавцов по прибыли
@@ -112,7 +112,7 @@ function analyzeSalesData(data, options) {
     .sort((a, b) => b.quantity - a.quantity) // Сортировка по убыванию
     .slice(0, 10); // Берем первые 10 элементов
       
-      // console.log(seller.top_products )
+      console.log(seller.top_products )
   })
   // @TODO: Подготовка итоговой коллекции с нужными полями
 
