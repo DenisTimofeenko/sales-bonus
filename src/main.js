@@ -108,12 +108,9 @@ function analyzeSalesData(data, options) {
     seller.bonus = calculateBonusByProfit(index, total, seller)
     // Формируем топ-10 товаров
     seller.top_products = Object.entries(seller.products_sold)
-    .sort((a, b) => b[1] - a[1]) 
-    .slice(0, 10) 
-    .map(([sku, quantity]) => ({
-      sku: sku,
-      quantity: quantity
-    })); 
+    .map(([sku, quantity]) => ({ sku, quantity })) 
+    .sort((a, b) => b.quantity - a.quantity) // Сортировка по убыванию
+    .slice(0, 10); // Берем первые 10 элементов
       
       // console.log(seller.top_products )
   })
